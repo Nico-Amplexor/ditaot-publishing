@@ -4,9 +4,10 @@ set -o errexit -o nounset
 
 rev=$(git rev-parse --short HEAD)
 
-REPONAME=`basename $PWD`
+REPONAME='ditaot-publishing-outputs'
 PARENTDIR=`dirname $PWD`
 USERNAME=`basename $PARENTDIR`
+echo "REPONAME: ${REPONAME}; REPONAME: ${PARENTDIR}; USERNAME: ${USERNAME};"
 cd output
 
 git init
@@ -15,7 +16,7 @@ git config user.email "nicolas.delobel@amplexor.com"
 
 git remote add upstream "https://$GH_TOKEN@github.com/$USERNAME/$REPONAME.git"
 git fetch upstream
-git reset upstream/ditaot-publishing-outputs
+git reset upstream/outputs
 
 touch .
 
@@ -30,4 +31,4 @@ git status
 
 git add -A .
 git commit -m "rebuild pages at ${rev}"
-git push -q upstream HEAD:ditaot-publishing-outputs
+git push -q upstream HEAD:outputs
