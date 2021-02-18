@@ -3,6 +3,8 @@ install:
 - echo "Installed"
 script:
 - sh .travis/publish.sh
+after_success:
+- sh .travis/deploy.sh
 env:
   global:
   - DITAMAP=dita/flowers/flowers.ditamap
