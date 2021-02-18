@@ -7,7 +7,7 @@ rev=$(git rev-parse --short HEAD)
 REPONAME=`basename $PWD`
 PARENTDIR=`dirname $PWD`
 USERNAME=`basename $PARENTDIR`
-cd out
+cd output
 
 git init
 git config user.name "Amplexor XML Deployer"
