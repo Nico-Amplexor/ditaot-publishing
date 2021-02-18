@@ -1,0 +1,13 @@
+language: dita
+install:
+  - echo "Installed"
+script:
+  - sh .travis/publish.sh
+env:
+  global:
+    - GH_TOKEN=d0a5c3084495b8135f322c70bae3c253acbea760
+    - DITAMAP=/dita/flowers/flowers.ditamap
+    - DITAVAL=/dita/pdf.ditaval
+    - OUT_DIR=/dita/out
+    - TEMP_DIR=/dita/temp
+    - ANT_OPTS=-Xmx1024M
